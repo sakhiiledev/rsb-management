@@ -9,7 +9,7 @@ export const usersRouter = router({
     try {
       return await userService.listUsers(ctx.prisma);
     } catch (err) {
-      handleServiceError(err);
+      return handleServiceError(err);
     }
   }),
 
@@ -19,7 +19,7 @@ export const usersRouter = router({
       try {
         return await userService.getUserById(ctx.prisma, input.id);
       } catch (err) {
-        handleServiceError(err);
+        return handleServiceError(err);
       }
     }),
 
@@ -29,7 +29,7 @@ export const usersRouter = router({
       try {
         return await userService.createUser(ctx.prisma, input, ctx.session.user);
       } catch (err) {
-        handleServiceError(err);
+        return handleServiceError(err);
       }
     }),
 
@@ -39,7 +39,7 @@ export const usersRouter = router({
       try {
         return await userService.updateUser(ctx.prisma, input, ctx.session.user);
       } catch (err) {
-        handleServiceError(err);
+        return handleServiceError(err);
       }
     }),
 
@@ -49,7 +49,7 @@ export const usersRouter = router({
       try {
         return await userService.softDeleteUser(ctx.prisma, input.id, ctx.session.user);
       } catch (err) {
-        handleServiceError(err);
+        return handleServiceError(err);
       }
     }),
 });

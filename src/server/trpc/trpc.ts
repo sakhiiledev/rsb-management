@@ -7,13 +7,11 @@ import { prisma } from "@/lib/prisma";
 import { logger } from "@/lib/logger";
 import { type UserRole } from "@prisma/client";
 
-export async function createTRPCContext(opts: { req: any; res: any }) {
-  const session = await getServerSession(opts.req, opts.res, authOptions);
+export async function createTRPCContext() {
+  const session = await getServerSession(authOptions);
   return {
     prisma,
     session,
-    req: opts.req,
-    res: opts.res,
   };
 }
 

@@ -20,7 +20,7 @@ export const auditRouter = router({
       try {
         return await auditService.listLogs(ctx.prisma, input);
       } catch (err) {
-        handleServiceError(err);
+        return handleServiceError(err);
       }
     }),
 });
