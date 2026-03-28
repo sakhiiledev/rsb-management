@@ -1,5 +1,6 @@
 import { type NextAuthOptions } from "next-auth";
 import { type Adapter } from "next-auth/adapters";
+import { getServerSession } from "next-auth";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
@@ -70,3 +71,7 @@ export const authOptions: NextAuthOptions = {
     },
   },
 };
+
+export function getServerAuthSession() {
+  return getServerSession(authOptions);
+}
