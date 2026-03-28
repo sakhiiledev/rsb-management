@@ -1,9 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "standalone",
-  experimental: {
-    serverComponentsExternalPackages: ["pino", "pino-pretty", "@prisma/client"],
-  },
+  // serverComponentsExternalPackages was promoted to stable in Next.js 15
+  serverExternalPackages: ["pino", "pino-pretty", "@prisma/client"],
 };
 
 export default nextConfig;

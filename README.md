@@ -6,7 +6,7 @@ A production-grade internal operations web app for a company team of 20–100 pe
 
 | Layer | Technology |
 |-------|-----------|
-| Framework | Next.js 14 (App Router) + TypeScript |
+| Framework | Next.js 15 (App Router) + TypeScript |
 | Styling | Tailwind CSS + shadcn/ui |
 | API | tRPC v11 (type-safe) |
 | Validation | Zod (every endpoint) |
